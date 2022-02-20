@@ -7,7 +7,28 @@ import {
   AvatarColors,
 } from './component/Avatar/IAvatar';
 
-import WhatsNew from './assets/icons/WhatsNew.svg';
+import WhatsNew from './assets/icons/WhatsNew';
+
+// const AvatarSchema = {
+//   user1: {
+//     initials: 'AB',
+//     type: 'TEXT',
+//     color: 'AQUAMARINE',
+//     size: 'LARGE',
+//   },
+//   user2: {
+//     initials: 'AB',
+//     type: 'TEXT',
+//     color: 'BRIGHT_BLUE',
+//     size: 'MEDIUM',
+//   },
+//   user3: {
+//     initials: 'AB',
+//     type: 'TEXT',
+//     color: 'LIPSTICK',
+//     size: 'SMALL',
+//   },
+// };
 
 const App: React.FC = () => (
   <div className="App">
@@ -17,21 +38,21 @@ const App: React.FC = () => (
         type={AvatarTypes.TEXT}
         size={AvatarSizes.LARGE}
         text="AB"
-        color={AvatarColors.AQUAMARINE}
+        backgroundColor={AvatarColors.AQUAMARINE}
       />
 
       <Avatar
         type={AvatarTypes.TEXT}
         size={AvatarSizes.MEDIUM}
         text="AB"
-        color={AvatarColors.BRIGHT_BLUE}
+        backgroundColor={AvatarColors.BRIGHT_BLUE}
       />
 
       <Avatar
         type={AvatarTypes.TEXT}
         size={AvatarSizes.SMALL}
         text="AB"
-        color={AvatarColors.LIPSTICK}
+        backgroundColor={AvatarColors.LIPSTICK}
       />
     </div>
     <div style={{ display: 'flex' }}>
@@ -40,7 +61,7 @@ const App: React.FC = () => (
         size={AvatarSizes.LARGE}
         text="AB"
         icon={WhatsNew}
-        color={AvatarColors.AQUAMARINE}
+        backgroundColor={AvatarColors.AQUAMARINE}
         disabled
       />
 
@@ -48,22 +69,23 @@ const App: React.FC = () => (
         type={AvatarTypes.ICON}
         size={AvatarSizes.MEDIUM}
         text="AB"
-        color={AvatarColors.BRIGHT_BLUE}
+        backgroundColor={AvatarColors.BRIGHT_BLUE}
       />
 
       <Avatar
         type={AvatarTypes.ICON}
         size={AvatarSizes.SMALL}
         text="AB"
-        color={AvatarColors.LIPSTICK}
+        backgroundColor={AvatarColors.LIPSTICK}
       />
     </div>
     <div style={{ display: 'flex' }}>
       <Avatar
-        type={AvatarTypes.ICON}
+        type={AvatarTypes.IMAGE}
+        src="https://media.nu.nl/m/m1mxngvaigrv_wd1280.jpg/cirque-du-soleil-maakt-avatar-show.jpg"
         size={AvatarSizes.LARGE}
         text="AB"
-        color={AvatarColors.AQUAMARINE}
+        backgroundColor={AvatarColors.AQUAMARINE}
         square
       />
 
@@ -71,7 +93,7 @@ const App: React.FC = () => (
         type={AvatarTypes.ICON}
         size={AvatarSizes.MEDIUM}
         text="AB"
-        color={AvatarColors.BRIGHT_BLUE}
+        backgroundColor={AvatarColors.BRIGHT_BLUE}
         square
       />
 
@@ -79,7 +101,7 @@ const App: React.FC = () => (
         type={AvatarTypes.ICON}
         size={AvatarSizes.SMALL}
         text="AB"
-        color={AvatarColors.LIPSTICK}
+        backgroundColor={AvatarColors.LIPSTICK}
         square
       />
     </div>

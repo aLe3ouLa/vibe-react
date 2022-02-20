@@ -16,18 +16,18 @@ const FontScale = {
 
 const AvatarStyle = styled.div<{
   size: AvatarSizes;
-  color: AvatarColors;
+  backgroundColor: AvatarColors;
   square?: boolean;
   disabled?: boolean;
 }>`
   border-color: 2px solid #e6e9ef;
 
   ${(props) => css`
-    background: ${props.color};
+    background: ${props.backgroundColor};
     width: ${SizeScale[props.size]}rem;
     height: ${SizeScale[props.size]}rem;
     border-radius: ${props.square ? '4px' : '50%'};
-    opacity: ${props.disabled ? 0.7 : 1};
+    opacity: ${props.disabled ? 0.65 : 1};
   `};
 `;
 
@@ -47,15 +47,45 @@ const AvatarText = styled.span<{ size: AvatarSizes }>`
   height: 100%;
 `;
 
-const AvatarIcon = styled.svg``;
+const AvatarIcon = styled.span`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+
+  & svg {
+    width: 26px;
+  }
+`;
+
+const AvatarImage = styled.span<{
+  square?: boolean;
+  src?: string;
+}>`
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+
+  ${(props) => css`
+    background: url(${props.src});
+    border-radius: ${props.square ? '4px' : '50%'};
+  `}
+
+  background-position: 50% 50%;
+  background-size: cover;
+`;
 
 const Avatar: React.FC<IAvatar> = ({
   size = AvatarSizes.SMALL,
-  color = AvatarColors.LIPSTICK,
+  backgroundColor = AvatarColors.LIPSTICK,
   type = AvatarTypes.TEXT,
   text,
   square,
-  icon,
+  icon: Icon,
   src,
   disabled,
 }: IAvatar) => {
@@ -67,14 +97,21 @@ const Avatar: React.FC<IAvatar> = ({
         avatarContent = <AvatarText size={size}>{text}</AvatarText>;
         break;
       }
-      avatarContent = <AvatarIcon>{src}</AvatarIcon>;
+      avatarContent = (
+        <AvatarImage role="img" src={src as string} square={square} />
+      );
       break;
     case AvatarTypes.ICON:
-      if (!icon) {
+      if (!Icon) {
         avatarContent = <AvatarText size={size}>{text}</AvatarText>;
         break;
       }
-      avatarContent = <AvatarIcon>{icon}</AvatarIcon>;
+
+      avatarContent = (
+        <AvatarIcon>
+          <Icon />
+        </AvatarIcon>
+      );
       break;
     case AvatarTypes.TEXT:
     default:
@@ -82,7 +119,12 @@ const Avatar: React.FC<IAvatar> = ({
   }
 
   return (
-    <AvatarStyle size={size} color={color} square={square} disabled={disabled}>
+    <AvatarStyle
+      size={size}
+      backgroundColor={backgroundColor}
+      square={square}
+      disabled={disabled}
+    >
       {avatarContent}
     </AvatarStyle>
   );

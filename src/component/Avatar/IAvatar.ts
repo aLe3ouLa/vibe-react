@@ -21,10 +21,22 @@ export enum AvatarColors {
 export interface IAvatar {
   type: AvatarTypes;
   size: AvatarSizes;
-  color: AvatarColors;
+  backgroundColor?: AvatarColors;
   text: string;
   square?: boolean;
-  icon?: React.FC<React.SVGProps<SVGSVGElement>>;
-  src?: string;
+  icon?: React.FC | string;
+  src?: string | object | undefined;
   disabled?: boolean;
+  role?: string;
+  ariaLabel?: string;
+  tabIndex?: number | string;
+  ariaHidden?: boolean;
+  topLeftBadgeProps?: object;
+  topRightBadgeProps?: object;
+  bottomLeftBadgeProps?: object;
+  bottomRightBadgeProps?: object;
+
+  //
+  // Object.values(Avatar.colors)
+  // elementColorsNames.CHILI_BLUE
 }
