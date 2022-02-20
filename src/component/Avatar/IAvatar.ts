@@ -37,6 +37,6 @@ export interface IAvatar {
   bottomRightBadgeProps?: object;
 
   //
-  // Object.values(Avatar.colors)
+  // Object.values(ColorToken.semantic)
   // elementColorsNames.CHILI_BLUE
 }

@@ -108,7 +108,7 @@ const Avatar: React.FC<IAvatar> = ({
       }
 
       avatarContent = (
-        <AvatarIcon>
+        <AvatarIcon role="img">
           <Icon />
         </AvatarIcon>
       );
