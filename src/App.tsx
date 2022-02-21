@@ -8,6 +8,8 @@ import {
 } from './component/Avatar/IAvatar';
 
 import WhatsNew from './assets/icons/WhatsNew';
+import Button from './component/Button/index';
+import { ButtonKind } from './component/Button/IButton';
 
 // const AvatarSchema = {
 //   user1: {
@@ -32,7 +34,15 @@ import WhatsNew from './assets/icons/WhatsNew';
 
 const App: React.FC = () => (
   <div className="App">
-    Hello
+    <div>
+      <Button onClick={() => {}}>Button</Button>
+      <Button kind={ButtonKind.SECONDARY} onClick={() => {}}>
+        Button
+      </Button>
+      <Button kind={ButtonKind.TERTIARY} onClick={() => {}}>
+        Button
+      </Button>
+    </div>
     <div style={{ display: 'flex' }}>
       <Avatar
         type={AvatarTypes.TEXT}
