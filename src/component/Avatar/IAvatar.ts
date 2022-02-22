@@ -1,42 +1,30 @@
+import { ColorToken } from '../../shared-design/colors';
+
 export enum AvatarTypes {
   TEXT = 'TEXT',
   ICON = 'ICON',
   IMAGE = 'IMAGE',
 }
 
-export enum AvatarSizes {
-  SMALL = 'SMALL',
-  MEDIUM = 'MEDIUM',
-  LARGE = 'LARGE',
-}
-
-export enum AvatarColors {
-  WORKING_ORANGE = '#FDAB3D',
-  BRIGHT_BLUE = '#579BFC',
-  AQUAMARINE = '#4ECCC6',
-  DONE_GREEN = '#00C875',
-  LIPSTICK = '#FF5AC4',
-}
+export type AvatarType = 'text' | 'icon' | 'image';
+export type AvatarSize = 'small' | 'medium' | 'large';
+export type AvatarColors = keyof typeof ColorToken.content;
 
 export interface IAvatar {
-  type: AvatarTypes;
-  size: AvatarSizes;
+  type: AvatarType;
+  size: AvatarSize;
   backgroundColor?: AvatarColors;
-  text: string;
+  text?: string;
   square?: boolean;
   icon?: React.FC | string;
-  src?: string | object | undefined;
+  src?: string | object;
   disabled?: boolean;
   role?: string;
   ariaLabel?: string;
-  tabIndex?: number | string;
+  tabIndex?: number;
   ariaHidden?: boolean;
   topLeftBadgeProps?: object;
   topRightBadgeProps?: object;
   bottomLeftBadgeProps?: object;
   bottomRightBadgeProps?: object;
-
-  //
-  // Object.values(ColorToken.semantic)
-  // elementColorsNames.CHILI_BLUE
 }
