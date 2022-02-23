@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { IAvatar, AvatarSize } from './IAvatar';
+import { IAvatar, AvatarSize } from './types/IAvatar';
 
 const FontScale = {
   large: 1.8,

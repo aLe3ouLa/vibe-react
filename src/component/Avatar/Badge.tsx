@@ -1,11 +1,11 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ColorToken } from '../../shared-design/colors';
-import { AvatarSize } from './IAvatar';
-import { IBadge } from './IBadge';
+import { AvatarSize } from './types/IAvatar';
+import { IBadge } from './types/IBadge';
 
 const BadgeSize = {
-  large: 2.2,
+  large: 2,
   medium: 1.6,
   small: 1.2,
 };
@@ -26,7 +26,7 @@ const BadgeStyle = styled.div<{
   place-items: center;
 
   & svg {
-    width: 70%;
+    width: 75%;
   }
 `;
 

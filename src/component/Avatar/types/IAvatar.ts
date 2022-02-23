@@ -1,4 +1,4 @@
-import { ColorToken } from '../../shared-design/colors';
+import { ColorToken } from '../../../shared-design/colors';
 
 export enum AvatarTypes {
   TEXT = 'TEXT',
@@ -14,8 +14,8 @@ export type AvatarSize = 'small' | 'medium' | 'large';
 export type AvatarColors = keyof typeof ColorToken.content;
 
 export interface IAvatar {
-  type: AvatarType;
-  size: AvatarSize;
+  type?: AvatarType;
+  size?: AvatarSize;
   backgroundColor?: AvatarColors;
   text?: string;
   square?: boolean;

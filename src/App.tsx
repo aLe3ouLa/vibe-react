@@ -22,7 +22,7 @@ const App: React.FC = () => (
 
       <Avatar
         type="text"
-        size="medium"
+        size="large"
         text="AB"
         backgroundColor="bright_blue"
         topLeftBadgeProps={{ src: WhatsNew }}

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ColorToken } from '../../shared-design/colors';
-import { IAvatar, AvatarColors, AvatarSize } from './IAvatar';
+import { IAvatar, AvatarColors, AvatarSize } from './types/IAvatar';
 import AvatarContent from './Content';
 import Badge from './Badge';
 
@@ -66,8 +66,8 @@ const BadgeWrapper = styled.div`
   grid-template-columns: 50% 50%;
   margin-left: auto;
   margin-right: auto;
-  height: 130%;
-  width: 130%;
+  height: 120%;
+  width: 120%;
 `;
 
 const Avatar: React.FC<IAvatar> = ({
