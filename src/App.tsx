@@ -25,6 +25,10 @@ const App: React.FC = () => (
         size="medium"
         text="AB"
         backgroundColor="bright_blue"
+        topLeftBadgeProps={{ src: WhatsNew }}
+        topRightBadgeProps={{ src: WhatsNew }}
+        bottomLeftBadgeProps={{ src: WhatsNew }}
+        bottomRightBadgeProps={{ src: WhatsNew }}
       />
 
       <Avatar type="text" size="small" text="AB" backgroundColor="lipstick" />

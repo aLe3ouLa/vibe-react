@@ -6,6 +6,9 @@ export enum AvatarTypes {
   IMAGE = 'IMAGE',
 }
 
+export interface IconPosition {
+  src?: React.FC;
+}
 export type AvatarType = 'text' | 'icon' | 'image';
 export type AvatarSize = 'small' | 'medium' | 'large';
 export type AvatarColors = keyof typeof ColorToken.content;
@@ -23,8 +26,8 @@ export interface IAvatar {
   ariaLabel?: string;
   tabIndex?: number;
   ariaHidden?: boolean;
-  topLeftBadgeProps?: object;
-  topRightBadgeProps?: object;
-  bottomLeftBadgeProps?: object;
-  bottomRightBadgeProps?: object;
+  topLeftBadgeProps?: IconPosition;
+  topRightBadgeProps?: IconPosition;
+  bottomLeftBadgeProps?: IconPosition;
+  bottomRightBadgeProps?: IconPosition;
 }
