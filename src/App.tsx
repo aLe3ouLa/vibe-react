@@ -3,8 +3,9 @@ import './App.css';
 import Avatar from './component/Avatar/Avatar';
 
 import WhatsNew from './assets/icons/WhatsNew';
-import Button from './component/Button/index';
+import Button from './component/Button/Button';
 import { ButtonKind } from './component/Button/IButton';
+import AlertBanner from './component/Banner/AlertBanner';
 
 const App: React.FC = () => (
   <div className="App">
@@ -72,6 +73,15 @@ const App: React.FC = () => (
         backgroundColor="american_gray"
         square
       />
+    </div>
+
+    <div>
+      <AlertBanner
+        backgroundColor="primary_background_color"
+        onClose={() => {}}
+      >
+        Alert
+      </AlertBanner>
     </div>
   </div>
 );
