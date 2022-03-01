@@ -6,6 +6,8 @@ import WhatsNew from './assets/icons/WhatsNew';
 import Button from './component/Button/Button';
 import { ButtonKind } from './component/Button/IButton';
 import AlertBanner from './component/Banner/AlertBanner';
+import AlertBannerText from './component/Banner/AlertContent/AlertText';
+import AlertBannerLink from './component/Banner/AlertContent/AlertLink';
 
 const App: React.FC = () => (
   <div className="App">
@@ -76,11 +78,24 @@ const App: React.FC = () => (
     </div>
 
     <div>
+      <AlertBanner backgroundColor="primary_color" onClose={() => {}}>
+        <AlertBannerText text="Alert 0" />
+        <AlertBannerLink href="https://monday.com" text="this is a CTA" />
+      </AlertBanner>
+
+      <AlertBanner backgroundColor="positive_color" onClose={() => {}}>
+        <AlertBannerText text="Alert 1" />
+      </AlertBanner>
+
+      <AlertBanner backgroundColor="negative_color" onClose={() => {}}>
+        <AlertBannerText text="Alert 2" />
+      </AlertBanner>
+
       <AlertBanner
-        backgroundColor="primary_background_color"
+        backgroundColor="inverted_color_background"
         onClose={() => {}}
       >
-        Alert
+        <AlertBannerText text="Alert 3" />
       </AlertBanner>
     </div>
   </div>
